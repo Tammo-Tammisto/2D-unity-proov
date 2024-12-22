@@ -6,6 +6,7 @@ public class Interaction : MonoBehaviour
 {
     public Canvas EPromptCanvas;
     public Canvas TutorialCanvas;
+    public Canvas PointCanvas;
     public GameObject PromptArea;
     public RainSpawner Spawner;
 
@@ -40,6 +41,7 @@ public class Interaction : MonoBehaviour
                 if (Input.GetKey(KeyCode.X))
                 {
                     TutorialCanvas.enabled = false;
+                    PointCanvas.enabled = true;
                     Debug.Log(gameObject.name + " has been interacted with.");
                     PromptArea.SetActive(false);
                     if (Spawner != null)
