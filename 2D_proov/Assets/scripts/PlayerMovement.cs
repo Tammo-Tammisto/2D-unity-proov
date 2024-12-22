@@ -44,7 +44,9 @@ public class PlayerMovement : MonoBehaviour
         }
         if (WinCanvas.enabled && audioSource.clip != winMusic)
         {
+            ScoreText.text = "";
             audioSource.Stop();
+            audioSource.PlayOneShot(coinSound);
             audioSource.clip = winMusic;
             audioSource.loop = true;
             audioSource.Play();
