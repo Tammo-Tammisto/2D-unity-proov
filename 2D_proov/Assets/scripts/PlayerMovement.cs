@@ -86,23 +86,28 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Coin")
+        if (other.gameObject.CompareTag("Coin"))
         {
-            Destroy(other.gameObject);
-            points++;
-            ScoreText.text = points.ToString() + "/15";
-            audioSource.PlayOneShot(coinSound);
-            if (points == 15)
+            Coin coin = other.gameObject.GetComponent<Coin>();
+            if (coin != null && !coin.isCollected)
             {
-                Debug.Log("You win!");
-                if (Spawner != null)
+                coin.isCollected = true; // Mark the coin as collected
+                Destroy(other.gameObject);
+                points++;
+                ScoreText.text = points.ToString() + "/15";
+                audioSource.PlayOneShot(coinSound);
+                if (points == 15)
                 {
-                    Spawner.StopRaining();
+                    Debug.Log("You win!");
+                    if (Spawner != null)
+                    {
+                        Spawner.StopRaining();
+                    }
+                    WinCanvas.enabled = true;
                 }
-                WinCanvas.enabled = true;
             }
         }
-        if (other.gameObject.tag == "Danger")
+        if (other.gameObject.CompareTag("Danger"))
         {
             Debug.Log("You lose!");
             LoseCanvas.enabled = true;
