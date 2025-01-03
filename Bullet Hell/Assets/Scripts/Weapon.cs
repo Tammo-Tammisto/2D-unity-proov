@@ -33,8 +33,11 @@ public class Weapon : MonoBehaviour
 
     void DestroyAllLasers()
     {
-        GameObject[] lasers = GameObject.FindGameObjectsWithTag("Laser");
-        foreach (GameObject laser in lasers)
+        List<GameObject> allLasers = new List<GameObject>();
+        allLasers.AddRange(GameObject.FindGameObjectsWithTag("Laser"));
+        allLasers.AddRange(GameObject.FindGameObjectsWithTag("EnemyLaser"));
+        
+        foreach (GameObject laser in allLasers)
         {
             Destroy(laser);
         }

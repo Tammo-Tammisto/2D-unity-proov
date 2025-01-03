@@ -19,12 +19,13 @@ public class Laser : MonoBehaviour
         if(hitInfo.tag == "Enemy")
         {
             Enemy enemy = hitInfo.GetComponent<Enemy>();
+            Score.score += 1000;
             if(enemy != null)
             {
                 enemy.TakeDamage(50);
             }
             Destroy(gameObject);
-            Score.score += 1000;
+            
         }
         if(hitInfo.tag == "DeleteBullet")
         {

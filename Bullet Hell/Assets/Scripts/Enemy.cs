@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -18,9 +19,13 @@ public class Enemy : MonoBehaviour
     private Vector3 startPosition;
     private int moveDirection = 1; // 1 for right, -1 for left
     public TMP_Text healthText;
+    public Canvas infoCanvas;
+    public Canvas winCanvas;
+    public TMP_Text totalScore;
 
     void Start()
     {
+        winCanvas.enabled = false;
         startPosition = transform.position;
         fireTimer = 1f / fireRate;
     }
@@ -56,7 +61,7 @@ public class Enemy : MonoBehaviour
     void ShootInCircle()
     {
         // Pick a random bullet count between 8 and 16 (inclusive)
-        int randomBulletCount = Random.Range(8, 17); // Upper bound is exclusive, so use 17
+        int randomBulletCount = UnityEngine.Random.Range(8, 17); // Upper bound is exclusive, so use 17
         float angleStep = 360f / randomBulletCount;
 
         for (int i = 0; i < randomBulletCount; i++)
@@ -82,16 +87,20 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
-        healthText.text = health.ToString()+ "/5000";
+        healthText.text = " " + health.ToString() + "/5000";
         if (health <= 0)
         {
             Die();
-            SceneManager.LoadScene("Level2");
         }
     }
 
     void Die()
     {
         Destroy(gameObject);
+        Score.score += PlayerScript.health * 1000;
+        Time.timeScale = 0;
+        infoCanvas.enabled = false;
+        winCanvas.enabled = true;
+        totalScore.text = "Total Score: " + Score.score.ToString() + "PTS";
     }
 }
