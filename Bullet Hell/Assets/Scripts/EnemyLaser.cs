@@ -14,7 +14,6 @@ public class EnemyLaser : MonoBehaviour
             if (player != null)
             {
                 player.TakeDamage(1);
-                Score.score -= 899;
             }
             Destroy(gameObject);
         }

@@ -16,21 +16,30 @@ public class Laser : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        if(hitInfo.tag == "Enemy")
+        if (hitInfo.tag == "Enemy")
         {
             Enemy enemy = hitInfo.GetComponent<Enemy>();
             Score.score += 1000;
-            if(enemy != null)
+            if (enemy != null)
             {
                 enemy.TakeDamage(50);
             }
             Destroy(gameObject);
-            
         }
-        if(hitInfo.tag == "DeleteBullet")
+        if (hitInfo.tag == "Enemy2")
+        {
+            Enemy2 enemy2 = hitInfo.GetComponent<Enemy2>();
+            Score.score += 1000;
+            if (enemy2 != null)
+            {
+                enemy2.TakeDamage(50);
+            }
+            Destroy(gameObject);
+        }
+        if (hitInfo.tag == "DeleteBullet")
         {
             Destroy(gameObject);
-            Score.score -= 655;
+            Score.score -= 65;
         }
     }
 }

@@ -9,6 +9,7 @@ TagManager:
   - Wall
   - Laser
   - EnemyLaser
+  - Enemy2
   layers:
   - Default
   - TransparentFX

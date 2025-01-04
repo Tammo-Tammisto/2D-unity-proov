@@ -87,7 +87,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
-        healthText.text = " " + health.ToString() + "/5000";
+        healthText.text = " " + health.ToString() + "/4500";
         if (health <= 0)
         {
             Die();
@@ -102,5 +102,6 @@ public class Enemy : MonoBehaviour
         infoCanvas.enabled = false;
         winCanvas.enabled = true;
         totalScore.text = "Total Score: " + Score.score.ToString() + "PTS";
+        Score.totalScore = Score.score;
     }
 }
