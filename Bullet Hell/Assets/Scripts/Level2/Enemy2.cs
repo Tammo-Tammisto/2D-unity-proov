@@ -10,6 +10,9 @@ public class Enemy2 : MonoBehaviour
     public float health = 2000f;
     public float shield = 5000f;
     public float moveSpeed = 2f; // Speed of left-right movement
+    public float dashSpeed = 6f; // Speed during dash
+    public float dashDuration = 1f; // How long the dash lasts
+    public float dashChance = 0.1f; // Chance per second to dash
     public float moveRange = 3f; // Distance the enemy moves from its starting position
     public GameObject bulletPrefab; // The bullet prefab
     public Transform firePoint; // The point where bullets are instantiated
@@ -30,6 +33,8 @@ public class Enemy2 : MonoBehaviour
     private int currentFirePointIndex = 0;
     private Transform[] firePoints;
     private float fireInterval;
+    private bool isDashing = false;
+    private bool canShoot = true; // New flag to control shooting
 
     void Start()
     {
@@ -45,6 +50,9 @@ public class Enemy2 : MonoBehaviour
 
         // Initialize the shield text
         shieldText.text = " " + shield.ToString() + "/5000";
+
+        // Start the dash check coroutine
+        StartCoroutine(CheckForDash());
     }
 
     void Update()
@@ -56,7 +64,8 @@ public class Enemy2 : MonoBehaviour
     void MoveLeftRight()
     {
         // Move left and right within the specified range
-        transform.position += Vector3.right * moveDirection * moveSpeed * Time.deltaTime;
+        float currentSpeed = isDashing ? dashSpeed : moveSpeed;
+        transform.position += Vector3.right * moveDirection * currentSpeed * Time.deltaTime;
 
         if (Mathf.Abs(transform.position.x - startPosition.x) >= moveRange)
         {
@@ -66,6 +75,8 @@ public class Enemy2 : MonoBehaviour
 
     void HandleShooting()
     {
+        if (!canShoot) return; // Prevent shooting while dashing
+
         // Handle shooting with time interval between fire points
         fireTimer -= Time.deltaTime;
         if (fireTimer <= 0f)
@@ -100,6 +111,54 @@ public class Enemy2 : MonoBehaviour
             {
                 rb.velocity = direction * 5f; // Set bullet speed (5 units/sec here)
             }
+        }
+    }
+
+    IEnumerator CheckForDash()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1f); // Check once per second
+            if (!isDashing && UnityEngine.Random.value <= dashChance)
+            {
+                StartCoroutine(Dash());
+            }
+        }
+    }
+
+    IEnumerator Dash()
+    {
+        isDashing = true;
+        canShoot = false; // Stop shooting while dashing
+
+        // Make the enemy and all fire points invisible
+        SetVisibility(false);
+
+        yield return new WaitForSeconds(dashDuration);
+
+        // Make the enemy and all fire points visible again
+        SetVisibility(true);
+        canShoot = true; // Resume shooting after dash
+
+        Debug.Log(transform.name + " stopped dashing");
+        isDashing = false;
+    }
+
+    // Helper method to set visibility of the enemy and its children
+    void SetVisibility(bool visible)
+    {
+        // Get the SpriteRenderer of the enemy
+        SpriteRenderer enemySpriteRenderer = GetComponent<SpriteRenderer>();
+        if (enemySpriteRenderer != null)
+        {
+            enemySpriteRenderer.enabled = visible;
+        }
+
+        // Get all child SpriteRenderers (including fire points)
+        SpriteRenderer[] childSpriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+        foreach (SpriteRenderer sr in childSpriteRenderers)
+        {
+            sr.enabled = visible;
         }
     }
 
