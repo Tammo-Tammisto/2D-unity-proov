@@ -1,0 +1,74 @@
+2025-01-14 20:02:35.5876 [WARNING] Unable to load UnityEngine.Sprite at 'Assets/Mira/Miiri rework steps3.png'[1].
+2025-01-14 20:14:44.0083 [ERROR] FileNotFoundException: Could not load the file 'Assembly-CSharp'.
+System.AppDomain.Load (System.String assemblyString, System.Security.Policy.Evidence assemblySecurity, System.Boolean refonly, System.Threading.StackCrawlMark& stackMark) (at <31687ccd371e4dc6b0c23a1317cf9474>:0)
+System.AppDomain.Load (System.String assemblyString) (at <31687ccd371e4dc6b0c23a1317cf9474>:0)
+(wrapper remoting-invoke-with-check) System.AppDomain.Load(string)
+System.Reflection.Assembly.Load (System.String assemblyString) (at <31687ccd371e4dc6b0c23a1317cf9474>:0)
+KS.SceneFusion2.Unity.Editor.sfComponentUtils.GetMonobehaviourTypeByName (System.String typeName) (at ./Library/PackageCache/com.kinematicsoup.scenefusion2@71c3d2002263/Source/Editor/sfComponentUtils.cs:223)
+KS.SceneFusion2.Unity.Editor.sfComponentUtils.AddComponent (UnityEngine.GameObject gameObject, System.String name) (at ./Library/PackageCache/com.kinematicsoup.scenefusion2@71c3d2002263/Source/Editor/sfComponentUtils.cs:102)
+UnityEngine.Debug:LogException(Exception)
+KS.Reactor.ksLog:LogToUnity(Level, String, String, Exception, Object)
+KS.Reactor.ksLog:HandleLog(String, String, String, Exception, Level, Object)
+KS.Reactor.ksLog:Log(String, String, Exception, Level, Object)
+KS.Reactor.ksLog:Error(String, String, Exception)
+KS.SceneFusion2.Unity.Editor.sfComponentUtils:LogAddComponentWarning(String, String, Exception) (at ./Library/PackageCache/com.kinematicsoup.scenefusion2@71c3d2002263/Source/Editor/sfComponentUtils.cs:263)
+KS.SceneFusion2.Unity.Editor.sfComponentUtils:AddComponent(GameObject, String) (at ./Library/PackageCache/com.kinematicsoup.scenefusion2@71c3d2002263/Source/Editor/sfComponentUtils.cs:117)
+KS.SceneFusion2.Unity.Editor.sfComponentTranslator:GetOrAddComponent(GameObject, String) (at ./Library/PackageCache/com.kinematicsoup.scenefusion2@71c3d2002263/Source/Editor/Translators/sfComponentTranslator.cs:943)
+KS.SceneFusion2.Unity.Editor.sfComponentTranslator:InitializeComponent(GameObject, sfObject, sfComponentFinder) (at ./Library/PackageCache/com.kinematicsoup.scenefusion2@71c3d2002263/Source/Editor/Translators/sfComponentTranslator.cs:808)
+KS.SceneFusion2.Unity.Editor.sfComponentTranslator:OnCreate(sfObject, Int32) (at ./Library/PackageCache/com.kinematicsoup.scenefusion2@71c3d2002263/Source/Editor/Translators/sfComponentTranslator.cs:753)
+KS.SceneFusion2.Unity.Editor.sfObjectEventDispatcher:OnCreate(sfObject, Int32) (at ./Library/PackageCache/com.kinematicsoup.scenefusion2@71c3d2002263/Source/Editor/sfObjectEventDispatcher.cs:271)
+KS.SceneFusion2.Client.sfSession:InvokeOnCreate(sfObject, Int32)
+KS.SceneFusion2.Client.sfSession:HandleCreate(ksMultiType[])
+KS.SceneFusion2.Client.RPCManager:ProcessInRPCs()
+KS.SceneFusion2.Client.sfSession:ProcessRPCs(Single)
+KS.SceneFusion2.Client.sfBaseService:Update(Single)
+KS.SceneFusion2.Client.sfService:Update(Single)
+KS.SceneFusion2.Unity.Editor.SceneFusion:Update() (at ./Library/PackageCache/com.kinematicsoup.scenefusion2@71c3d2002263/Source/Editor/SceneFusion.cs:474)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions()
+
+2025-01-14 20:14:44.0115 [ERROR] Error adding component '#InputManager'.: Could not load the file 'Assembly-CSharp'.
+  at System.AppDomain.Load (System.String assemblyString, System.Security.Policy.Evidence assemblySecurity, System.Boolean refonly, System.Threading.StackCrawlMark& stackMark) [0x00016] in <31687ccd371e4dc6b0c23a1317cf9474>:0 
+  at System.AppDomain.Load (System.String assemblyString) [0x00002] in <31687ccd371e4dc6b0c23a1317cf9474>:0 
+  at (wrapper remoting-invoke-with-check) System.AppDomain.Load(string)
+  at System.Reflection.Assembly.Load (System.String assemblyString) [0x00005] in <31687ccd371e4dc6b0c23a1317cf9474>:0 
+  at KS.SceneFusion2.Unity.Editor.sfComponentUtils.GetMonobehaviourTypeByName (System.String typeName) [0x00032] in .\Library\PackageCache\com.kinematicsoup.scenefusion2@71c3d2002263\Source\Editor\sfComponentUtils.cs:223 
+  at KS.SceneFusion2.Unity.Editor.sfComponentUtils.AddComponent (UnityEngine.GameObject gameObject, System.String name) [0x0002d] in .\Library\PackageCache\com.kinematicsoup.scenefusion2@71c3d2002263\Source\Editor\sfComponentUtils.cs:102 
+2025-01-14 20:14:44.0145 [WARNING] Unable to load component 'InputManager'.
+2025-01-14 20:30:11.3259 [WARNING] Unable to load UnityEditor.Animations.AnimatorController at 'Assets/Mira/Animations/Player.controller'.
+2025-01-14 21:19:08.9077 [WARNING] Unable to load UnityEngine.InputSystem.InputActionAsset at 'Assets/Input/Controls.inputactions'.
+2025-01-14 21:20:14.2497 [ERROR] FileNotFoundException: Could not load the file 'Assembly-CSharp'.
+System.AppDomain.Load (System.String assemblyString, System.Security.Policy.Evidence assemblySecurity, System.Boolean refonly, System.Threading.StackCrawlMark& stackMark) (at <31687ccd371e4dc6b0c23a1317cf9474>:0)
+System.AppDomain.Load (System.String assemblyString) (at <31687ccd371e4dc6b0c23a1317cf9474>:0)
+(wrapper remoting-invoke-with-check) System.AppDomain.Load(string)
+System.Reflection.Assembly.Load (System.String assemblyString) (at <31687ccd371e4dc6b0c23a1317cf9474>:0)
+KS.SceneFusion2.Unity.Editor.sfComponentUtils.GetMonobehaviourTypeByName (System.String typeName) (at ./Library/PackageCache/com.kinematicsoup.scenefusion2@71c3d2002263/Source/Editor/sfComponentUtils.cs:223)
+KS.SceneFusion2.Unity.Editor.sfComponentUtils.AddComponent (UnityEngine.GameObject gameObject, System.String name) (at ./Library/PackageCache/com.kinematicsoup.scenefusion2@71c3d2002263/Source/Editor/sfComponentUtils.cs:102)
+UnityEngine.Debug:LogException(Exception)
+KS.Reactor.ksLog:LogToUnity(Level, String, String, Exception, Object)
+KS.Reactor.ksLog:HandleLog(String, String, String, Exception, Level, Object)
+KS.Reactor.ksLog:Log(String, String, Exception, Level, Object)
+KS.Reactor.ksLog:Error(String, String, Exception)
+KS.SceneFusion2.Unity.Editor.sfComponentUtils:LogAddComponentWarning(String, String, Exception) (at ./Library/PackageCache/com.kinematicsoup.scenefusion2@71c3d2002263/Source/Editor/sfComponentUtils.cs:263)
+KS.SceneFusion2.Unity.Editor.sfComponentUtils:AddComponent(GameObject, String) (at ./Library/PackageCache/com.kinematicsoup.scenefusion2@71c3d2002263/Source/Editor/sfComponentUtils.cs:117)
+KS.SceneFusion2.Unity.Editor.sfComponentTranslator:GetOrAddComponent(GameObject, String) (at ./Library/PackageCache/com.kinematicsoup.scenefusion2@71c3d2002263/Source/Editor/Translators/sfComponentTranslator.cs:943)
+KS.SceneFusion2.Unity.Editor.sfComponentTranslator:InitializeComponent(GameObject, sfObject, sfComponentFinder) (at ./Library/PackageCache/com.kinematicsoup.scenefusion2@71c3d2002263/Source/Editor/Translators/sfComponentTranslator.cs:808)
+KS.SceneFusion2.Unity.Editor.sfComponentTranslator:OnCreate(sfObject, Int32) (at ./Library/PackageCache/com.kinematicsoup.scenefusion2@71c3d2002263/Source/Editor/Translators/sfComponentTranslator.cs:753)
+KS.SceneFusion2.Unity.Editor.sfObjectEventDispatcher:OnCreate(sfObject, Int32) (at ./Library/PackageCache/com.kinematicsoup.scenefusion2@71c3d2002263/Source/Editor/sfObjectEventDispatcher.cs:271)
+KS.SceneFusion2.Client.sfSession:InvokeOnCreate(sfObject, Int32)
+KS.SceneFusion2.Client.sfSession:HandleCreate(ksMultiType[])
+KS.SceneFusion2.Client.RPCManager:ProcessInRPCs()
+KS.SceneFusion2.Client.sfSession:ProcessRPCs(Single)
+KS.SceneFusion2.Client.sfBaseService:Update(Single)
+KS.SceneFusion2.Client.sfService:Update(Single)
+KS.SceneFusion2.Unity.Editor.SceneFusion:Update() (at ./Library/PackageCache/com.kinematicsoup.scenefusion2@71c3d2002263/Source/Editor/SceneFusion.cs:474)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions()
+
+2025-01-14 21:20:14.2497 [ERROR] Error adding component '#PlayerMovement'.: Could not load the file 'Assembly-CSharp'.
+  at System.AppDomain.Load (System.String assemblyString, System.Security.Policy.Evidence assemblySecurity, System.Boolean refonly, System.Threading.StackCrawlMark& stackMark) [0x00016] in <31687ccd371e4dc6b0c23a1317cf9474>:0 
+  at System.AppDomain.Load (System.String assemblyString) [0x00002] in <31687ccd371e4dc6b0c23a1317cf9474>:0 
+  at (wrapper remoting-invoke-with-check) System.AppDomain.Load(string)
+  at System.Reflection.Assembly.Load (System.String assemblyString) [0x00005] in <31687ccd371e4dc6b0c23a1317cf9474>:0 
+  at KS.SceneFusion2.Unity.Editor.sfComponentUtils.GetMonobehaviourTypeByName (System.String typeName) [0x00032] in .\Library\PackageCache\com.kinematicsoup.scenefusion2@71c3d2002263\Source\Editor\sfComponentUtils.cs:223 
+  at KS.SceneFusion2.Unity.Editor.sfComponentUtils.AddComponent (UnityEngine.GameObject gameObject, System.String name) [0x0002d] in .\Library\PackageCache\com.kinematicsoup.scenefusion2@71c3d2002263\Source\Editor\sfComponentUtils.cs:102 
+2025-01-14 21:20:14.2507 [WARNING] Unable to load component 'PlayerMovement'.
+2025-01-14 21:42:17.0435 [WARNING] Unable to create stand-in library asset for UnityEngine.InputSystem.InputActionAsset at 'Assets/Input/Controls.inputactions'. Offline missing asset replacement will not work for this asset.

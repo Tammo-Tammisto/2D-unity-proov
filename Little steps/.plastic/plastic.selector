@@ -1,4 +1,3 @@
-repository "Little steps/Little steps@1375666119132@cloud"
+rep "Little steps/Little steps@1375666119132@cloud"
   path "/"
-    br "/main"
-    co "/main"
+    smartbranch "/main"

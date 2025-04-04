@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.kinematicsoup.scenefusion2": {
-      "version": "file:C:/Users/tammo/Downloads/com.kinematicsoup.scenefusion2-2.0.3.tgz",
+      "version": "file:C:/Users/Admin/Downloads/com.kinematicsoup.scenefusion2-2.0.3.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {}
@@ -164,6 +164,15 @@
       "source": "registry",
       "dependencies": {
         "com.unity.test-framework": "1.1.9"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.inputsystem": {
+      "version": "1.11.2",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.uielements": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },

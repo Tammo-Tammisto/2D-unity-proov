@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MenuScene.unity
+    guid: 24860a36bbd5326439cfdf14625b3180
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: 1de6b33826146204b9e9b2cc9a00dbc9
+  - enabled: 1
+    path: Assets/Scenes/NumpadScene.unity
+    guid: ef1b7c342367e3042ac27c390b34111e
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: 048a576948e0bf343b1effa7bd56932f
+  - enabled: 1
+    path: Assets/Scenes/Death.unity
+    guid: 6204660eca01736418cd8ec8f46b8d57
+  - enabled: 1
+    path: Assets/Scenes/Level 3.unity
+    guid: ecba069d31c270d49b22f18ac459011e
+  - enabled: 1
+    path: Assets/Scenes/BluePuzzleScene.unity
+    guid: 1c3c058ff2be33c4d813b3d9435a9d5f
+  - enabled: 1
+    path: Assets/Scenes/FindTheDifference.unity
+    guid: b90776caf1fc28448a23908073941cee
+  - enabled: 1
+    path: Assets/Scenes/SwitchingGame.unity
+    guid: bd97f6a032fd6ff449d0882cdf2d9b18
+  - enabled: 1
+    path: Assets/Scenes/FinalRoom.unity
+    guid: 2b01fb79f3e859146aec85a746853bdc
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: 01062da30ccfdd34b8f66a38f6d51b82
+  m_configObjects: {}
